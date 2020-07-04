@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
 
 #define DEBUG 1
 #if DEBUG==1
@@ -11,12 +9,37 @@
     #define LOGT(x) ;
 #endif
 
-#define CINT(TABLE, LENGTH) for(int i = 0; i < LENGTH; i++) {std::cin >> TABLE[i]; }
-#define CINTS(TABLE, LENGTH, STARTAT) for(int i = STARTAT; i < LENGTH+STARTAT; i++) {std::cin >> TABLE[i]; }
+#pragma pack(push, 1)
+struct BitmapHeader {
+    unsigned short file_type;
+    unsigned file_size;
+    unsigned short reserved1;
+    unsigned short reserved2;
+    unsigned bitmap_offset;
 
-//CODE 
+    unsigned size;
+    int width;
+    int height;
+    unsigned short planes;
+    unsigned short bits_per_pixel;
+    unsigned compression;
+    unsigned size_of_bitmap;
+    int horz_res;
+    int vert_res;
+    unsigned colors_used;
+    unsigned colors_important;
 
+
+
+};
+#pragma pack(pop)
+
+//TODO: Write Image
+void write_image() {
+
+}
+
+//TODO(Q DO IT): give picture size via args
 int main() {
-    int n;
-    std::cin >> n;
+    return 0; 
 }
